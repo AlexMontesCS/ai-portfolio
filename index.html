@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Montes - AI Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Alex Montes</h1>
+            <p class="subtitle">AI Developer & Machine Learning Engineer</p>
+            <p class="description">
+                Passionate about creating intelligent applications that solve real-world problems. 
+                Specializing in <span class="highlight">deep learning</span>, <span class="highlight">natural language processing</span>, 
+                and <span class="highlight">reinforcement learning</span> with full-stack implementation expertise.
+            </p>
+        </div>
+    </header>
+
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured AI Projects</h2>
+            <p class="section-subtitle">A collection of AI applications showcasing expertise in machine learning, deep learning, and intelligent system development.</p>
+            
+            <div class="projects-grid">
+                <!-- Conversational AI Chatbot -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <video muted loop preload="metadata">
+                            <source src="chatbot/Demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="media-controls">
+                            <button class="control-btn" onclick="openFullscreen('chatbot-modal')" title="View Fullscreen">⛶</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Conversational AI Chatbot with RAG</h3>
+                        <p class="project-description">
+                            A production-ready conversational AI chatbot using Retrieval-Augmented Generation (RAG) 
+                            to answer questions based on uploaded documents. Features document processing, advanced 
+                            hybrid search, automatic citations, and a modern React-based interface.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">FAISS</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">OpenAI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="chatbot/" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RL Snake -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <video muted loop preload="metadata">
+                            <source src="rl_snake/Demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="media-controls">
+                            <button class="control-btn" onclick="openFullscreen('snake-modal')" title="View Fullscreen">⛶</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Snake: Deep Reinforcement Learning</h3>
+                        <p class="project-description">
+                            A comprehensive reinforcement learning playground featuring a Deep Q-Network (DQN) agent 
+                            that learns to play Snake. Includes real-time AI visualization, interactive training with 
+                            configurable hyperparameters, and model comparison capabilities.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">DQN</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Game</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="rl_snake/" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training Playground -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <video muted loop preload="metadata">
+                            <source src="training_playground/Demo.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="media-controls">
+                            <button class="control-btn" onclick="openFullscreen('training-modal')" title="View Fullscreen">⛶</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Model Training Playground</h3>
+                        <p class="project-description">
+                            An interactive web application for training and evaluating machine learning models with 
+                            real-time visualization. Supports multiple datasets (MNIST, CIFAR-10, IMDB), various 
+                            architectures (CNNs, ResNets, LSTMs), and live hyperparameter tuning.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">LSTM</span>
+                            <span class="tech-tag">ResNet</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="training_playground/" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            <!-- Math Engine -->
+            <div class="project-card">
+                <div class="project-media">
+                    <img src="math_engine/Demo.png" alt="Math Engine Demo" />
+                    <div class="media-controls">
+                        <button class="control-btn" onclick="openFullscreen('math-modal')" title="View Fullscreen">⛶</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">AI-Powered Math Equation Solver</h3>
+                    <p class="project-description">
+                        An advanced mathematical equation solver with step-by-step symbolic simplification. 
+                        Features LaTeX parsing, visual expression trees with D3.js, LLM-powered explanations, 
+                        and a modern React interface for educational and professional use.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SymPy</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">LaTeX</span>
+                        <span class="tech-tag">OpenAI</span>
+                    </div>
+                                         <div class="project-links">
+                         <a href="math_engine/" class="btn btn-primary">View Project</a>
+                     </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fullscreen Modals -->
+    <div id="chatbot-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFullscreen('chatbot-modal')">&times;</button>
+            <video class="modal-media" controls>
+                <source src="chatbot/Demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div id="math-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFullscreen('math-modal')">&times;</button>
+            <img class="modal-media" src="math_engine/Demo.png" alt="Math Engine Demo" />
+        </div>
+    </div>
+
+    <div id="snake-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFullscreen('snake-modal')">&times;</button>
+            <video class="modal-media" controls>
+                <source src="rl_snake/Demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div id="training-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFullscreen('training-modal')">&times;</button>
+            <video class="modal-media" controls>
+                <source src="training_playground/Demo.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <a href="mailto:24montesa@gmail.com" class="contact-link">24montesa@gmail.com</a>
+                <a href="https://github.com/AlexMontesCS" class="contact-link">GitHub</a>
+            </div>
+            <p>&copy; 2025 Alex Montes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple modal functions
+        function openFullscreen(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Auto-play videos in fullscreen
+            const video = modal.querySelector('video');
+            if (video) {
+                video.currentTime = 0;
+                video.play();
+            }
+        }
+
+        function closeFullscreen(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            // Pause videos when closing
+            const video = modal.querySelector('video');
+            if (video) {
+                video.pause();
+            }
+        }
+
+        // Play video on hover (preview videos)
+        document.querySelectorAll('.project-media video').forEach(video => {
+            const projectCard = video.closest('.project-card');
+            
+            projectCard.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            
+            projectCard.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+
+        // Close modal when clicking outside or pressing Escape
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeFullscreen(this.id);
+                }
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    closeFullscreen(modal.id);
+                });
+            }
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

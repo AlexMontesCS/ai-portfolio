@@ -1,0 +1,7 @@
+# Minimal requirements for core functionality
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+sympy
+python-dotenv
