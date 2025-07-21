@@ -28,7 +28,7 @@
                 <!-- Conversational AI Chatbot -->
                 <div class="project-card">
                     <div class="project-media">
-                        <video muted loop preload="metadata">
+                        <video muted loop preload="metadata" poster="chatbot/Demo.mp4#t=0.1">
                             <source src="chatbot/Demo.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -61,7 +61,7 @@
                 <!-- RL Snake -->
                 <div class="project-card">
                     <div class="project-media">
-                        <video muted loop preload="metadata">
+                        <video muted loop preload="metadata" poster="rl_snake/Demo.mp4#t=0.1">
                             <source src="rl_snake/Demo.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -94,7 +94,7 @@
                 <!-- Training Playground -->
                 <div class="project-card">
                     <div class="project-media">
-                        <video muted loop preload="metadata">
+                        <video muted loop preload="metadata" poster="training_playground/Demo.mov#t=0.1">
                             <source src="training_playground/Demo.mov" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -160,7 +160,7 @@
     <div id="chatbot-modal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeFullscreen('chatbot-modal')">&times;</button>
-            <video class="modal-media" controls>
+            <video class="modal-media" controls poster="chatbot/Demo.mp4#t=0.1">
                 <source src="chatbot/Demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -177,7 +177,7 @@
     <div id="snake-modal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeFullscreen('snake-modal')">&times;</button>
-            <video class="modal-media" controls>
+            <video class="modal-media" controls poster="rl_snake/Demo.mp4#t=0.1">
                 <source src="rl_snake/Demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -187,7 +187,7 @@
     <div id="training-modal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeFullscreen('training-modal')">&times;</button>
-            <video class="modal-media" controls>
+            <video class="modal-media" controls poster="training_playground/Demo.mov#t=0.1">
                 <source src="training_playground/Demo.mov" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -231,17 +231,54 @@
             }
         }
 
-        // Play video on hover (preview videos)
+        // Play video on hover (preview videos) and touch for mobile
         document.querySelectorAll('.project-media video').forEach(video => {
             const projectCard = video.closest('.project-card');
+            let touchStarted = false;
             
+            // Desktop hover behavior
             projectCard.addEventListener('mouseenter', () => {
-                video.play();
+                if (!touchStarted) {
+                    video.play().catch(() => {
+                        // Fallback if autoplay fails
+                        video.load();
+                    });
+                }
             });
             
             projectCard.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
+                if (!touchStarted) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+            });
+            
+            // Mobile touch behavior
+            projectCard.addEventListener('touchstart', () => {
+                touchStarted = true;
+                // Load video metadata on first touch
+                if (video.readyState === 0) {
+                    video.load();
+                }
+            });
+            
+            // Play/pause on tap for mobile
+            video.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (video.paused) {
+                    video.play().catch(() => {
+                        // Fallback if autoplay fails
+                        video.load();
+                    });
+                } else {
+                    video.pause();
+                }
+            });
+            
+            // Ensure video loads properly on mobile
+            video.addEventListener('loadstart', () => {
+                // Force load first frame for thumbnail
+                video.currentTime = 0.1;
             });
         });
 

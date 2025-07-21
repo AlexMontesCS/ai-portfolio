@@ -131,6 +131,14 @@ h1 {
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #000;
+    cursor: pointer;
+}
+
+.project-media video {
+    /* Ensure videos load properly on mobile */
+    -webkit-playsinline: true;
+    playsinline: true;
 }
 
 .project-card:hover .project-media video,
@@ -389,5 +397,43 @@ footer {
 
     .projects-section {
         padding: 80px 0;
+    }
+
+    /* Mobile video optimizations */
+    .project-media video {
+        /* Force load metadata on mobile */
+        preload: metadata;
+    }
+
+    .media-controls {
+        /* Always show controls on mobile for better UX */
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        padding: 4px;
+    }
+
+    .project-media {
+        /* Add subtle indication that videos are interactive */
+        position: relative;
+    }
+
+    .project-media::after {
+        content: '▶';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 2rem;
+        pointer-events: none;
+        opacity: 0.6;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        transition: opacity 0.3s ease;
+    }
+
+    .project-media video:not([poster]):not(:hover)::after {
+        /* Hide play button when video has loaded or is playing */
+        opacity: 0;
     }
 } 
