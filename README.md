@@ -3,7 +3,7 @@
 A portfolio showcasing AI and machine learning projects with full-stack implementations.
 
 ## Live Demo
-Visit the live portfolio: **[https://alexmontescs.github.io/portfolio](https://alexmontescs.github.io/portfolio)**
+Visit the live portfolio: **[https://alexmontescs.github.io/portfolio](https://alexmontescs.github.io/ai-portfolio)**
 
 
 ## Overview
